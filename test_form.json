@@ -1,0 +1,15 @@
+{
+    "name": "Survey",
+    "components": [
+        {
+            "type": "string",
+            "name": "first_name",
+            "title": "First Name"
+        },
+        {
+            "type": "string",
+            "name": "last_name",
+            "title": "Last Name"
+        }
+    ]
+}
