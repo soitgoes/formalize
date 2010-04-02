@@ -9,14 +9,23 @@
 <script src="/_utils/script/json2.js"></script>
 <script src="/_utils/script/jquery.js"></script>
 <script src="/_utils/script/jquery.couch.js"></script>
-<script src="vendor/couchapp/jquery.couch.app.js"></script>
-<script src="vendor/couchapp/jquery.couch.app.util.js"></script>
-<script src="vendor/couchapp/jquery.evently.js"></script>
-<script src="vendor/couchapp/jquery.pathbinder.js"></script>
-<script src="vendor/couchapp/jquery.mustache.js"></script>
+<script src="../couchapp/jquery.couch.app.js"></script>
+<script src="../couchapp/jquery.couch.app.util.js"></script>
+<script src="../couchapp/jquery.evently.js"></script>
+<script src="../couchapp/jquery.pathbinder.js"></script>
+<script src="../couchapp/jquery.mustache.js"></script>
 <script type="text/javascript">
     $.couch.app(function(app) {
-        var formalize = app.require("vendor/formalized/lib/formalize").formalize;
-        $("#survey").html(formalize(app.ddoc.vendor.formalized.test_form));
+        try {
+            console.log("hello");
+            var formalize = app.require("vendor/formalized/lib/formalize").formalize;
+            console.log("hello2");
+            var formMeta = app.ddoc.vendor.formalized.test_form;
+            console.log(formMeta);
+            $("#survey").html(formalize(formMeta).html());
+        } catch (err) {
+            console.log(JSON.stringify(err));
+            throw err;
+        }
     });
 </script>
