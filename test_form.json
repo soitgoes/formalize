@@ -2,14 +2,63 @@
     "name": "Survey",
     "components": [
         {
-            "type": "string",
-            "name": "first_name",
-            "title": "First Name"
+            "type": "group",
+            "name": "name_group",
+            "components": [
+                {
+                    "type": "string",
+                    "name": "first_name",
+                    "title": "First Name"
+                },
+                {
+                    "type": "string",
+                    "name": "last_name",
+                    "title": "Last Name"
+                }
+            ]
         },
         {
-            "type": "string",
-            "name": "last_name",
-            "title": "Last Name"
+            "type": "group",
+            "name": "contact_information",
+            "title": "Contact Information",
+            "components": [
+                {
+                    "type": "group",
+                    "name": "address",
+                    "components": [
+                        {
+                            "type": "string",
+                            "name": "street1",
+                            "title": "Street 1"
+                        },
+                        {
+                            "type": "string",
+                            "name": "street2",
+                            "title": "Street 2"
+                        },
+                        {
+                            "type": "string",
+                            "name": "city",
+                            "title": "City"
+                        },
+                        {
+                            "type": "string",
+                            "name": "state",
+                            "title": "State"
+                        }
+                    ]
+                },
+                {
+                    "type": "string",
+                    "name": "email",
+                    "title": "Email"
+                },
+                {
+                    "type": "string",
+                    "name": "phone",
+                    "title": "Phone"
+                }
+            ]
         }
     ]
 }

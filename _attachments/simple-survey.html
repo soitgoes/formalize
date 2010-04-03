@@ -17,14 +17,19 @@
 <script type="text/javascript">
     $.couch.app(function(app) {
         try {
-            console.log("hello");
-            var formalize = app.require("vendor/formalized/lib/formalize").formalize;
-            console.log("hello2");
+            var FORMALIZE = app.require("vendor/formalized/lib/formalize");
+            var formalize = FORMALIZE.formalize;
             var formMeta = app.ddoc.vendor.formalized.test_form;
-            console.log(formMeta);
-            $("#survey").html(formalize(formMeta).html());
+            $("#survey").html(formalize(formMeta).html({ 
+                beforeStrategy: function(strategy, veto) {
+                    if (strategy == FORMALIZE.strategy.fieldGroupStrategy) {
+                        $.log("vetoing");
+                        veto();
+                    }
+                }
+            }));
         } catch (err) {
-            console.log(JSON.stringify(err));
+            $.log(JSON.stringify(err));
             throw err;
         }
     });
