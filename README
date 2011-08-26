@@ -1,5 +1,5 @@
 Formalize is a way to quickly describe forms in JSON so that they may be rendered using a templating engine (such as mustache).
 
-Validation is currently considered out of scope as it is easy enough to do with jquery.validate and we wouldn't want to constain your options on what validation framework should be used.
+Validation is currently considered out of scope as it is easy enough to do with jquery.validate and we wouldn't want to constrain your options on what validation framework should be used.
 
 The scope of this project is intentially small and limited.
